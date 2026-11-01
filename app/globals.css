@@ -1,1 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+:root {
+  /* Surface Tokens */
+  --bnavat-surface-base: #121212;
+  --bnavat-surface-raised: #1E1F22;
+  --bnavat-surface-inverted: #F9F9F8;
+
+  /* Brand Accents */
+  --bnavat-brand-primary: #F4F3EE;
+  --bnavat-brand-shadow: #5F6872;
+  --bnavat-border-subtle: #2B2E33;
+  --bnavat-text-muted: #9DA3AE;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bnavat-surface-base);
+  color: var(--bnavat-brand-primary);
+}
+
+body {
+  background-color: var(--bnavat-surface-base);
+  color: var(--bnavat-brand-primary);
+  font-family: var(--font-brand-body), system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #F4F3EE;
+  color: #121212;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+::-webkit-scrollbar-thumb {
+  background: #2B2E33;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5F6872;
+}
