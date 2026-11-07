@@ -47,14 +47,13 @@ export default function Navbar() {
       e.preventDefault();
       contactEl.scrollIntoView({ behavior: "smooth" });
       setTimeout(() => {
-        const inputEl = document.getElementById("client-name");
-        inputEl?.focus();
+        document.getElementById("client-name")?.focus();
       }, 450);
     }
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 border-b border-bnavat-border bg-bnavat-base/85 backdrop-blur-md">
+    <header className="fixed top-0 left-0 right-0 z-40 border-b border-bnavat-border/80 bg-bnavat-base/75 backdrop-blur-md">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
         <Link
           href="/"
@@ -62,36 +61,24 @@ export default function Navbar() {
           aria-label="BNAVAT Home"
         >
           <BnavatMonogram className="h-9 w-9 transition-transform duration-300 group-hover:scale-105" />
-          <div className="flex flex-col">
-            <span className="font-display text-lg font-bold uppercase tracking-[0.16em] text-bnavat-primary leading-none">
-              BNAVAT
-            </span>
-            <span className="mt-1 font-mono text-[9px] uppercase tracking-[0.2em] text-bnavat-shadow">
-              SYS.VER // 1.0
-            </span>
-          </div>
+          <span className="font-display text-lg font-bold uppercase tracking-[0.16em] text-bnavat-primary">
+            BNAVAT
+          </span>
         </Link>
 
-        <nav aria-label="Primary Navigation" className="hidden md:flex items-center gap-8">
+        <nav aria-label="Primary Navigation" className="hidden md:flex items-center gap-9">
           {NAV_LINKS.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className="relative font-mono text-xs uppercase tracking-[0.12em] text-bnavat-muted transition hover:text-bnavat-primary after:absolute after:-bottom-1 after:left-0 after:h-[1px] after:w-0 after:bg-bnavat-primary after:transition-all hover:after:w-full"
+              className="font-mono text-xs uppercase tracking-[0.14em] text-bnavat-muted transition hover:text-bnavat-primary"
             >
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-4">
-          <div className="hidden lg:flex items-center gap-2 border border-bnavat-border bg-bnavat-surface/70 px-3 py-1.5">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-bnavat-muted">
-              GATEWAY: ONLINE
-            </span>
-          </div>
-
+        <div className="hidden md:flex items-center">
           <Link
             href={pathname === "/" ? "#contact" : "/contact"}
             onClick={handleStartProjectClick}
